@@ -38,8 +38,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "f1d941ac-12a1-409c-9f16-a769fe85dfb8",
             "zIndex": 1,
+            "id": "f1d941ac-12a1-409c-9f16-a769fe85dfb8",
             "data": {
               "type": "tm.Actor",
               "name": "User",
@@ -53,7 +53,7 @@
           },
           {
             "position": {
-              "x": 783,
+              "x": 803,
               "y": 239.99999999999997
             },
             "size": {
@@ -72,8 +72,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "837f1c84-b5d6-45a0-96fe-6f6374019df8",
             "zIndex": 2,
+            "id": "837f1c84-b5d6-45a0-96fe-6f6374019df8",
             "data": {
               "type": "tm.Actor",
               "name": "Database",
@@ -106,8 +106,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "58704fec-cfe2-42d9-bf64-f97af18e659e",
             "zIndex": 3,
+            "id": "58704fec-cfe2-42d9-bf64-f97af18e659e",
             "data": {
               "type": "tm.Process",
               "name": "Check for Secure \nConnection(HTTPS)",
@@ -122,7 +122,7 @@
           {
             "position": {
               "x": 480,
-              "y": 221.33333333333331
+              "y": 202.66666666666663
             },
             "size": {
               "width": 80,
@@ -140,8 +140,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "c5206567-e154-4d2e-bdbc-596980dd44bd",
             "zIndex": 4,
+            "id": "c5206567-e154-4d2e-bdbc-596980dd44bd",
             "data": {
               "type": "tm.Process",
               "name": "Check for \nUSER",
@@ -174,8 +174,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "e52087ae-6afa-4bce-9ac6-a2a7db19b6e4",
             "zIndex": 5,
+            "id": "e52087ae-6afa-4bce-9ac6-a2a7db19b6e4",
             "data": {
               "type": "tm.Process",
               "name": "Check \nPassword",
@@ -216,6 +216,9 @@
               "threats": []
             },
             "id": "6e804c37-9f76-4e7d-b0cd-bb52fa2f9626",
+            "labels": [
+              "Login request"
+            ],
             "source": {
               "cell": "f1d941ac-12a1-409c-9f16-a769fe85dfb8"
             },
@@ -223,8 +226,11 @@
               "x": 350,
               "y": 90
             },
-            "labels": [
-              "Login request"
+            "vertices": [
+              {
+                "x": 190,
+                "y": 130
+              }
             ]
           },
           {
@@ -256,6 +262,9 @@
               "threats": []
             },
             "id": "746f7062-a830-4c88-8a57-9e1dc3d6f813",
+            "labels": [
+              "Redirect to HTTPS"
+            ],
             "source": {
               "x": 430,
               "y": 150
@@ -264,14 +273,433 @@
               "x": 200,
               "y": 260
             },
-            "labels": [
-              "Redirect to HTTPS"
-            ],
             "vertices": [
               {
                 "x": 320,
                 "y": 210
               }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login accepted",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "7bdb0cda-1a70-492d-a283-48379096eba2",
+            "source": {
+              "cell": "f1d941ac-12a1-409c-9f16-a769fe85dfb8"
+            },
+            "target": {
+              "cell": "e52087ae-6afa-4bce-9ac6-a2a7db19b6e4"
+            },
+            "vertices": [
+              {
+                "x": 170,
+                "y": 330
+              }
+            ],
+            "labels": [
+              "Login accepted"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Invalid Password",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "458e5bd9-ad7f-4c94-8db5-e4275c2b8d80",
+            "source": {
+              "x": 190,
+              "y": 290
+            },
+            "target": {
+              "cell": "e52087ae-6afa-4bce-9ac6-a2a7db19b6e4"
+            },
+            "labels": [
+              "Invalid Password"
+            ],
+            "vertices": [
+              {
+                "x": 280,
+                "y": 330
+              },
+              {
+                "x": 300,
+                "y": 330
+              },
+              {
+                "x": 350,
+                "y": 360
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Invalid User name",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "56c84a83-8ee7-4d52-a975-5d85cb05cb19",
+            "source": {
+              "x": 480,
+              "y": 257
+            },
+            "target": {
+              "x": 200,
+              "y": 280
+            },
+            "vertices": [
+              {
+                "x": 330,
+                "y": 280
+              }
+            ],
+            "labels": [
+              "Invalid User name"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Salt is valid",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "10fa0594-da6b-49f1-82b9-44ee614b7ad9",
+            "source": {
+              "x": 513,
+              "y": 283
+            },
+            "target": {
+              "cell": "e52087ae-6afa-4bce-9ac6-a2a7db19b6e4"
+            },
+            "labels": [
+              "Salt is valid"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTPS Connection  accepted",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "62b30862-0cc3-44df-bf47-dfaff270b9b2",
+            "source": {
+              "x": 440,
+              "y": 143
+            },
+            "target": {
+              "cell": "c5206567-e154-4d2e-bdbc-596980dd44bd"
+            },
+            "labels": [
+              "HTTPS Connection  accepted"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Query password salt for user",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "3199d63a-66a4-4ed0-8d6a-d139db090d3c",
+            "source": {
+              "x": 560,
+              "y": 223
+            },
+            "target": {
+              "x": 800,
+              "y": 240
+            },
+            "vertices": [
+              {
+                "x": 740,
+                "y": 223
+              }
+            ],
+            "labels": [
+              "Query password salt for user"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Return Salt",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "3b585fc6-f833-4ad7-b5cb-f1b8aa427f96",
+            "source": {
+              "x": 803,
+              "y": 265
+            },
+            "target": {
+              "cell": "c5206567-e154-4d2e-bdbc-596980dd44bd"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 265
+              }
+            ],
+            "labels": [
+              "Return Salt"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Query for username with salted password",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "2d7f36db-3459-484b-b5ec-3789a16a03ec",
+            "source": {
+              "cell": "837f1c84-b5d6-45a0-96fe-6f6374019df8"
+            },
+            "target": {
+              "cell": "e52087ae-6afa-4bce-9ac6-a2a7db19b6e4"
+            },
+            "vertices": [
+              {
+                "x": 700,
+                "y": 360
+              },
+              {
+                "x": 610,
+                "y": 390
+              },
+              {
+                "x": 570,
+                "y": 390
+              }
+            ],
+            "labels": [
+              "Query for username with salted password"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Return User record",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "88fe6a35-afea-4bb6-b0b0-10a3b5102d28",
+            "source": {
+              "cell": "837f1c84-b5d6-45a0-96fe-6f6374019df8"
+            },
+            "target": {
+              "x": 450,
+              "y": 450
+            },
+            "vertices": [
+              {
+                "x": 811,
+                "y": 350
+              },
+              {
+                "x": 720,
+                "y": 430
+              }
+            ],
+            "labels": [
+              "Return User record"
             ]
           }
         ]
