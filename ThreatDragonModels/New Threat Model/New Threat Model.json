@@ -1,0 +1,16 @@
+{
+  "version": "2.0.4-RC3",
+  "summary": {
+    "title": "New Threat Model",
+    "owner": "Sohel Pathan",
+    "description": "Web Application Threat Modelling Diagram",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "UCoE Honours Degree Practical",
+    "threatTop": 0
+  }
+}
